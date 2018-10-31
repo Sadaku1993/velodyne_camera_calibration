@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<launch>
+
+    <node pkg="tf" type="static_transform_publisher" name="sq_lidar2realsense" args="0.111393 -0.0103084 -0.0137764 0.00335265 -1.11099e-05 -0.00655574 centerlaser camera/camera_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="camera_link2camera_color_frame" args="0.000 0.015 0.000 0.001 -0.001 -0.017 camera/camera_link camera/camera_color_frame 100"/>
+    <node pkg="tf" type="static_transform_publisher" name="camera_color_frame2camera_color_optical_frame" args="0.000 0.000 0.000 -1.571 0.000 -1.571 camera/camera_color_frame camera/camera_color_optical_frame 100"/>
+
+</launch>

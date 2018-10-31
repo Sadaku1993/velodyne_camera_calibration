@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--データを保存-->
+<launch>
+    <!--tf-->
+    <include file="$(find velodyne_camera_calibration)/launch/velodyne_2_realsense.launch" />
+    <include file="$(find velodyne_camera_calibration)/launch/realsense.launch" />
+
+    <!--velodyne-->
+    <include file="$(find velodyne_points)/launch/32e_points.launch" />
+
+    <!--coloring pointcloud-->
+    <node pkg="velodyne_camera_calibration" type="coloring_pointcloud" name="coloring_pointcloud">
+        <remap from="/image" to="/camera_image_raw" />
+        <remap from="/cinfo" to="/camera_info" />
+        <remap from="/lidar" to="/velodyne_points" />
+        <remap from="/colored_cloud" to="/velodyne_points/colored" />
+    </node>
+
+    <!--rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find velodyne_camera_calibration)/config/coloring_pointcloud.rviz"/>
+
+    <!--rosbag play-->
+    <node pkg="rosbag" type="play" name="play" args="$(find velodyne_camera_calibration)/bagfiles/data.bag" />
+
+</launch>

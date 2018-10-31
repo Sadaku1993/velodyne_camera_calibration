@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="velodyne2realsense" args="0.111393 -0.0103084 -0.0137764 0.00335265 -1.11099e-05 -0.00655574 velodyne camera/camera_link 100" />
+</launch>
