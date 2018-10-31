@@ -45,12 +45,26 @@ catkin_package(
 ###########
 
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
 add_executable(coloring_pointcloud src/coloring_pointcloud.cpp)
 target_link_libraries(coloring_pointcloud
+    ${catkin_LIBRARIES}
+    ${PCL_LIBRARIES}
+    ${OpenCV_+IBRARIES}
+)
+
+add_executable(projection_pointcloud src/projection_pointcloud.cpp)
+target_link_libraries(projection_pointcloud
+    ${catkin_LIBRARIES}
+    ${PCL_LIBRARIES}
+    ${OpenCV_+IBRARIES}
+)
+
+add_executable(sensor_fusion src/sensor_fusion.cpp)
+target_link_libraries(sensor_fusion
     ${catkin_LIBRARIES}
     ${PCL_LIBRARIES}
     ${OpenCV_+IBRARIES}
