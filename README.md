@@ -42,8 +42,12 @@ velodyne_camera_calibration/
   launch/
 ```
 
-# How to Use
+## How to Use
 
 ```
 roslaunch velodyne_camera_calibration sensor_fusion.launch
 ```
+
+
+## Reference
+This code is based on [velo2cam_calibration](http://wiki.ros.org/velo2cam_calibration).
