@@ -28,7 +28,7 @@ catkin_make
 ```
 
 ### Download Bag data
-Download data.bag from [this link](https://drive.google.com/file/d/1aP3foMD4WPVQz0ZLOP1HcivBn1AOtJz4/view?usp=sharing). Move bag data to bagfiles.
+Download [data.bag](https://drive.google.com/file/d/1aP3foMD4WPVQz0ZLOP1HcivBn1AOtJz4/view?usp=sharing) and move to bagfiles.
 
 ```bash
 velodyne_camera_calibration/
